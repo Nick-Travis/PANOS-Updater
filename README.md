@@ -7,18 +7,34 @@ chomod +x ./FirewallUpdate.sh
 
 ## Sample Output
 ./FirewallUpdate.sh
+
 API Key Retrieved!
+
 Fetching licenses from Palo Alto Networks Servers
+
 success
+
 Sending command to download latest content updates
+
+
 Content Download Job ID is  2
+
 ....OK
+
 Content Install Job ID is 3
+
 .......................................................OK
+
 Pan-OS Download ID is  4
+
 ................................................................OK
+
 Install Job ID is  5
+
 ....................................................................................................OK
+
 Rebooting Firewall Now
+
 success
+
 Script Complete, Please wait for firewall to reboot
