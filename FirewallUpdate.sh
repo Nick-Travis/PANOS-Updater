@@ -1,10 +1,12 @@
-#Variables
+#Variables(Change these to match your firewall)
 firewallIP='172.16.5.101'
-version='8.1.11'
+version='8.1.15'
 userID='admin'
 password='admin'
 
-#Monitor Job function
+########## YOU SHOULD NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##########
+
+#Monitor Job fucntion
 function Monitor {
     #echo "jobID sent to function is "$1
     JobStatus=PEND
@@ -19,7 +21,7 @@ function Monitor {
     done
     echo $JobStatus
 }
-#Get API key from firewall
+#Get API key
 APIKey=`curl -k -s -X GET 'https://'$firewallIP'/api/?type=keygen&user='$userID'&password='$password''| awk -F '>' {'print $4'} | awk -F '<' {'print $1'}`
 #echo $APIKey
 echo 'API Key Retrieved!'
