@@ -1,5 +1,5 @@
 # PANOS-Updater
-Bash script(not pretty, but functional) for updating content and PAN-OS on Palo Alto Networks Firewalls.  Update the four variables at the beginnging of the file and run the script.  It will automatically reboot the firewall after the udpate.
+Bash script(not pretty, but functional) for updating content and PAN-OS on Palo Alto Networks Firewalls.  Update the four variables at the beginnging of the file and run the script.  It will automatically reboot the firewall after the update.
 
 ## Usage
 chomod +x ./FirewallUpdate.sh
