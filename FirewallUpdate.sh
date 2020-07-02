@@ -1,6 +1,8 @@
 #Variables
 firewallIP='172.16.5.101'
 version='8.1.11'
+userID='admin'
+password='admin'
 
 #Monitor Job fucntion
 function Monitor {
@@ -18,13 +20,12 @@ function Monitor {
     echo $JobStatus
 }
 #Get API key
-APIKey=`curl -k -s -X GET 'https://'$firewallIP'/api/?type=keygen&user=admin&password=admin'| awk -F '>' {'print $4'} | awk -F '<' {'print $1'}`
+APIKey=`curl -k -s -X GET 'https://'$firewallIP'/api/?type=keygen&user='$userID'&password='$password''| awk -F '>' {'print $4'} | awk -F '<' {'print $1'}`
 #echo $APIKey
 echo 'API Key Retrieved!'
 
 #Retreive License Keys From Server
 echo "Fetching licenses from Palo Alto Networks Servers"
-#<request><license><fetch></fetch></license></request>
 curl -k -s -X GET 'https://'$firewallIP'/api/?type=op&cmd=<request><license><fetch></fetch></license></request>&key='$APIKey''| awk -F 'status="' {'print $2'} | awk -F '"' {'print $1'}
 
 #Download Latest Content Updates
