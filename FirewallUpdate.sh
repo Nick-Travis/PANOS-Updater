@@ -4,7 +4,7 @@ version='8.1.11'
 userID='admin'
 password='admin'
 
-#Monitor Job fucntion
+#Monitor Job function
 function Monitor {
     #echo "jobID sent to function is "$1
     JobStatus=PEND
@@ -19,7 +19,7 @@ function Monitor {
     done
     echo $JobStatus
 }
-#Get API key
+#Get API key from firewall
 APIKey=`curl -k -s -X GET 'https://'$firewallIP'/api/?type=keygen&user='$userID'&password='$password''| awk -F '>' {'print $4'} | awk -F '<' {'print $1'}`
 #echo $APIKey
 echo 'API Key Retrieved!'
